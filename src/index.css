@@ -1,0 +1,21 @@
+/* src/index.css - 修正後的乾淨版本 */
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  /* ❌ 移除 display: flex 和 place-items: center */
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* ✅ 關鍵：讓 React 的掛載點 (#root) 填滿視窗 */
+#root {
+  width: 100%;
+  height: 100%;
+  /* ❌ 移除 max-width, margin: 0 auto, text-align: center */
+}
