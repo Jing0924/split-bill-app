@@ -361,17 +361,25 @@ input[type="date"] {
   display: flex;
   align-items: center;
 }
+/* src/App.css */
+
+/* 修改日曆圖示的樣式 */
 input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
-  opacity: 0.8;
-  filter: invert(1);
+  opacity: 1; /* 讓它完全不透明 */
   transition: 0.2s;
   padding: 5px;
+  
+  /* 👇 關鍵在這裡：我們直接換一張背景圖 */
+  /* 這裡放的是一張 URL 編碼過的 SVG 圖示，顏色設定為 #3b82f6 (藍色) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
 }
+
+/* Hover 時的效果：稍微變亮一點，或者加上背景圈圈 */
 input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background-color: rgba(59, 130, 246, 0.1); /* 淡淡的藍色背景 */
+  border-radius: 50%; /* 變成圓形按鈕的感覺 */
   opacity: 1;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
 }
 
 .selector-scroll {
